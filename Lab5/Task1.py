@@ -3,17 +3,17 @@ from collections import deque
 
 class Graph:
     def __init__(self):
-        self.graph = {}
+        self.graph = {}   #stores graph as adjacent list 
 
-    def add_edge(self, u, v):
+    def add_edge(self, u, v):    #adding edges
         if u not in self.graph:
             self.graph[u] = []
 
         if v not in self.graph:
             self.graph[v] = []
 
-        # Undirected graph
-        self.graph[u].append(v)
+        # Undirected graph 
+        self.graph[u].append(v)         # dono sides se edge connect hoga
         self.graph[v].append(u)
 
     def bfs(self, start):
@@ -27,17 +27,17 @@ class Graph:
         print("Breadth First Search Traversal:")
 
         while queue:
-            vertex = queue.popleft()
+            vertex = queue.popleft() 
             print(vertex, end=" ")
 
-            for neighbor in self.graph[vertex]:
-                if neighbor not in visited:
+            for neighbor in self.graph[vertex]:      #checking neighbours if they r in visited list , if not then added
+                if neighbor not in visited:         
                     visited.add(neighbor)
                     queue.append(neighbor)
 
 
 # Create graph
-g = Graph()
+g = Graph()     # graph class ka ek object bna rhe jiska naam g ha 
 
 # Add edges according to the given graph
 g.add_edge(0, 1)

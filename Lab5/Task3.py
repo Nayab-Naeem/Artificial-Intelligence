@@ -29,7 +29,7 @@ class PriorityQueue:
 pq = PriorityQueue()
 
 # Insert elements
-pq.enqueue("Task A", 3)
+pq.enqueue("Task A", 3)   
 pq.enqueue("Task B", 1)
 pq.enqueue("Task C", 2)
 pq.enqueue("Task D", 4)
